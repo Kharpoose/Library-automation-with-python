@@ -9,6 +9,10 @@ ws = wb.active
 ws.title = "Library"
 
 ws.append(['Books Name','date of borrowing the book','date of return of the book','the person who rented the book'])
+ws['A1'].font = Font(color= 'b7312c')
+ws['B1'].font = Font(color= 'b7312c')
+ws['C1'].font = Font(color= 'b7312c')
+ws['D1'].font = Font(color= 'b7312c')
 
 book_name = input("input name a book: ")
 timein = input("the date the book was checked out: ")
