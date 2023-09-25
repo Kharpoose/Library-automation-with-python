@@ -23,13 +23,13 @@ def Library():
         timeout = input("input the return date: ")
         name = input("Who is taking the book? ")
 
-        ws["A2"].append([book_name, timein, timeout, name])
+        ws.append([book_name, timein, timeout, name])
 
         b = str(input("print exit if you want to exit otherwise print anything"))
 
         if b == "exit":
             aaa = False
-        wb.save('libraryNew.xlsx')
+        wb.save('libraryNewnewnew.xlsx')
 
 x = str(input("if you want to start Library Automation write start")).lower()
 
