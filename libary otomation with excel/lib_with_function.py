@@ -2,6 +2,7 @@ from openpyxl import Workbook, load_workbook
 from openpyxl.styles import Font
 
 
+
 wb = Workbook()
 ws = wb.active
 ws.title = "Library"
@@ -23,7 +24,7 @@ def Library():
         timeout = input("input the return date: ")
         name = input("Who is taking the book? ")
 
-        ws["A2"].append([book_name, timein, timeout, name])
+        ws.append([book_name, timein, timeout, name])
 
         b = str(input("print exit if you want to exit otherwise print anything"))
 
@@ -31,7 +32,16 @@ def Library():
             aaa = False
         wb.save('libraryNew.xlsx')
 
-x = str(input("if you want to start Library Automation write start")).lower()
+
+def editLibrary():
+    ld = load_workbook('libraryNew.xlsx')
+    ls = ld.active
+    y = input("input ")
+    print(ws[f"{y}"].value)
+
+x = str(input("if you want to start new Library Automation write start or if you want to edit your library write edit: ")).lower()
 
 if x == "start":
     Library()
+elif x == "edit":
+    editLibrary() 
